@@ -48,7 +48,7 @@ class TaskController extends Controller
     {
         try {
             $task = Task::where('user_id', Auth::id())
-                ->with('users') // Eager load users
+                ->with('users')
                 ->findOrFail($id);
 
             return new TaskResource($task);
